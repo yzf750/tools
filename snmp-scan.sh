@@ -3,7 +3,7 @@
 if [ "$#" -ne 2 ]; then
     echo "Usage: $0 <CIDR> <COMMUNITY_STRING>"
     echo "Example: $0 192.168.1.0/24 public"
-	echo "Example: $0 192.168.1.0/24 private"
+    echo "Example: $0 192.168.1.0/24 private"
     exit 1
 fi
 
