@@ -6,25 +6,26 @@ Default Password Tool
 Installation:
 
 Requires the python module "prettytable" that formats CSV output for the terminal. Install with the following command.
-
+```bash
 sudo apt-get install python3-prettytable
-
+```
 Extract "default-passwords.py" and "default-passwords.csv" to a directory
 
 Make the script executable
+```bash
 chmod +x default-passwords.py
-
+```
 
 Usage:
-
+```bash
 default-passwords.py <password_file_path> <search_value>
-
+```
 The default password file is included "default-passwords.csv"
 
 Example search for cisco
-
+```bash
 default-passwords.py default-passwords.csv cisco
-
+```
 All fields are searchable. for example search by Manufacturer or Model. Try your luck!
 
 
