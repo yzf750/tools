@@ -16,7 +16,7 @@ RED='\033[0;31m'
 NC='\033[0m' # No Color
 
 # Function to check if an IP has SNMP enabled
-echo ""
+echo -e ""
 check_snmp() {
     IP=$1
     SYS_DESCR=$(snmpwalk -v2c -c $COMMUNITY_STRING $IP 1.3.6.1.2.1.1.1.0 2>/dev/null | awk -F ': ' '{print $2}')
