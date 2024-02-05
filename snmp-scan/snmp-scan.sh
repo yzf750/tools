@@ -20,11 +20,11 @@ check_snmp() {
     SYS_DESCR=$(snmpwalk -v2c -c $COMMUNITY_STRING $IP 1.3.6.1.2.1.1.1.0 2>/dev/null | awk -F ': ' '{print $2}')
     if [ $? -eq 0 ] && [ -n "$SYS_DESCR" ]; then
 
-		# Use color output
-		# echo -e "SNMP community string ${GREEN}'$COMMUNITY_STRING${NC}' is enabled on ${RED}$IP${NC} - System Description: $SYS_DESCR"
-		
-		# No color output
-		echo -e "SNMP community string '$COMMUNITY_STRING' is enabled on $IP - System Description: $SYS_DESCR"
+	# Use color output
+	# echo -e "SNMP community string ${GREEN}'$COMMUNITY_STRING${NC}' is enabled on ${RED}$IP${NC} - System Description: $SYS_DESCR"
+	
+	# No color output
+	echo -e "SNMP community string '$COMMUNITY_STRING' is enabled on $IP - System Description: $SYS_DESCR"
 
         echo "$IP" > $COMMUNITY_STRING-affected-ips.txt
     fi
