@@ -32,7 +32,7 @@ check_snmp() {
 	#echo -e "System Description: $SYS_DESCR"
  	#echo -e ""
 
-        echo "$IP" > $CIDR_CLEANED-$COMMUNITY_STRING-affected-ips.txt
+        echo "$IP" >> $CIDR_CLEANED-$COMMUNITY_STRING-affected-ips.txt
     fi
 }
 
