@@ -4,6 +4,7 @@ Good for finding defaults and creating quick screenshots for reports
 
 Required packages
 ```bash
+sudo apt-get install nmap
 sudo apt-get install snmp-mibs-downloader 
 sudo apt-get install snmp
 ```
