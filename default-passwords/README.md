@@ -9,7 +9,6 @@ Requires the python module "prettytable" that formats CSV output for the termina
 ```bash
 sudo apt-get install python3-prettytable
 ```
-Extract "default-passwords.py" and "default-passwords.csv" to a directory
 
 Make the script executable
 ```bash
