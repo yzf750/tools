@@ -41,4 +41,4 @@ wait
 # Display the list of affected IP addresses
 echo -e "\nList of affected IP addresses:"
 cat $COMMUNITY_STRING-affected-ips.txt
-# rm -f affected_ips.txt
+# rm -f $COMMUNITY_STRING-affected-ips.txt
