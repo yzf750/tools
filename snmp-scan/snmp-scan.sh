@@ -25,12 +25,12 @@ check_snmp() {
 	# Use color output
 	echo -e "SNMP community string ${GREEN}'$COMMUNITY_STRING${NC}' is enabled on ${RED}$IP${NC}"
 	echo -e "System Description: $SYS_DESCR"
-	echo ""
+	echo -e ""
 		
 	# No color output
 	#echo -e "SNMP community string '$COMMUNITY_STRING' is enabled on $IP"
 	#echo -e "System Description: $SYS_DESCR"
- 	#echo ""
+ 	#echo -e ""
 
         echo "$IP" > $CIDR_CLEANED-$COMMUNITY_STRING-affected-ips.txt
     fi
@@ -47,5 +47,5 @@ wait
 # Display the list of affected IP addresses
 echo -e "\nList of affected IP addresses:"
 cat $CIDR_CLEANED-$COMMUNITY_STRING-affected-ips.txt
-echo ""
+echo -e ""
 # rm -f $COMMUNITY_STRING-affected_ips.txt
