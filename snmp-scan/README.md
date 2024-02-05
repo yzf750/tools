@@ -1,4 +1,4 @@
-Scans a CIDR address for SNMP community strings
+Scans a CIDR address using specified SNMP community string
 
 Good for finding defaults and creating quick screenshots for reports
 
