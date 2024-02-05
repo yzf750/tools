@@ -7,6 +7,7 @@ if [ "$#" -ne 2 ]; then
 fi
 
 CIDR=$1
+CIDR_CLEANED=$(echo "$CIDR" | sed 's/\//\-/g')
 COMMUNITY_STRING=$2
 
 # ANSI escape codes for text formatting
@@ -21,16 +22,16 @@ check_snmp() {
     SYS_DESCR=$(snmpwalk -v2c -c $COMMUNITY_STRING $IP 1.3.6.1.2.1.1.1.0 2>/dev/null | awk -F ': ' '{print $2}')
     if [ $? -eq 0 ] && [ -n "$SYS_DESCR" ]; then
 
-	# Use color output
-	echo -e "SNMP community string ${GREEN}'$COMMUNITY_STRING${NC}' is enabled on ${RED}$IP${NC}"
-	echo -e "System Description: $SYS_DESCR"
-	echo ""
+		# Use color output
+		echo -e "SNMP community string ${GREEN}'$COMMUNITY_STRING${NC}' is enabled on ${RED}$IP${NC}"
+		echo -e "System Description: $SYS_DESCR"
+		echo ""
 		
-	# No color output
-	#echo -e "SNMP community string '$COMMUNITY_STRING' is enabled on $IP"
-	#echo -e "System Description: $SYS_DESCR"
+		# No color output
+		#echo -e "SNMP community string '$COMMUNITY_STRING' is enabled on $IP"
+		#echo -e "System Description: $SYS_DESCR"
 
-        echo "$IP" > $COMMUNITY_STRING-affected-ips.txt
+        echo "$IP" > $CIDR_CLEANED-$COMMUNITY_STRING-affected-ips.txt
     fi
 }
 
@@ -44,6 +45,6 @@ wait
 
 # Display the list of affected IP addresses
 echo -e "\nList of affected IP addresses:"
-cat $COMMUNITY_STRING-affected-ips.txt
+cat $CIDR_CLEANED-$COMMUNITY_STRING-affected-ips.txt
 echo ""
 # rm -f $COMMUNITY_STRING-affected_ips.txt
