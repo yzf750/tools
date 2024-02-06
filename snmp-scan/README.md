@@ -13,6 +13,15 @@ Example usage
 ```
 snmp-scan.sh <subnet-to-scan> <community-string>
 ```
+Single Host
+```bash
+snmp-scan.sh 192.168.1.222 public
+```
+Single Subnet
 ```bash
 snmp-scan.sh 192.168.1.0/24 public
+```
+Multiple Subnets
+```bash
+snmp-scan.sh 192.168.1.0/24,10.10.10.0/24 public
 ```
