@@ -22,6 +22,7 @@ COMMUNITY_STRING=$2
 # ANSI escape codes for text formatting
 GREEN='\033[0;32m'
 RED='\033[0;31m'
+CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
 # Function to check if an IP has SNMP enabled
@@ -32,10 +33,10 @@ check_snmp() {
     if [ $? -eq 0 ] && [ -n "$SYS_DESCR" ]; then
 
 	# Use color output
-	echo -e "SNMP community string ${GREEN}'$COMMUNITY_STRING${NC}' is enabled on ${RED}$IP${NC}"
+	echo -e "SNMP community string ${GREEN}'$COMMUNITY_STRING'${NC} is enabled on ${CYAN}'$IP'${NC}"
 	echo -e "System Description: $SYS_DESCR"
 	echo -e ""
-	
+		
 	# No color output
 	#echo -e "SNMP community string '$COMMUNITY_STRING' is enabled on $IP"
 	#echo -e "System Description: $SYS_DESCR"
@@ -45,10 +46,12 @@ check_snmp() {
     fi
 }
 
+
 # Loop through the IP addresses in the CIDR range
 #for IP in $(nmap -sn $CIDR | grep 'Nmap scan report' | awk '{print $5}'); do
 #    check_snmp $IP &
 #done
+
 
 # Split the comma-separated CIDR list into an array
 IFS=',' read -ra CIDR_ARRAY <<< "$CIDR"
@@ -63,6 +66,7 @@ done
 
 # Wait for all background processes to finish
 wait
+
 
 # Display the list of affected IP addresses
 echo -e "\nList of affected IP addresses:"
