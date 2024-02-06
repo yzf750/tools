@@ -3,11 +3,15 @@
 if [ "$#" -ne 2 ]; then
     echo "Usage: $0 <CIDR> <COMMUNITY_STRING>"
 	echo ""
+	echo "Single Host"
+	echo "Example: $0 192.168.1.222 public"
+	echo ""
 	echo "Single Subnet"    
 	echo "Example: $0 192.168.1.0/24 public"
 	echo ""	
 	echo "Multiple Subnets"
 	echo "Example: $0 192.168.1.0/24,10.10.10.0/24 public"
+	echo ""
     exit 1
 fi
 
