@@ -17,20 +17,20 @@ chmod +x default-passwords.py
 
 Usage:
 ```bash
-default-passwords.py <password_file_path> <search_value>
+default-passwords.py <search_value>
 ```
 The default password file is included "default-passwords.csv"
 
 Example search for cisco
 ```bash
-default-passwords.py default-passwords.csv cisco
+default-passwords.py cisco
 ```
 All fields are searchable. for example search by Manufacturer or Model. Try your luck!
 
 
 Adding a default password to the list:
 
-The CSV file is formatted in the following manner.
+The script is formatted in the following manner.
 
 Manufacturer,Model or Protocol,Username,Password
 
