@@ -19,7 +19,7 @@ Usage:
 ```bash
 default-passwords.py <search_value>
 ```
-The default password file is included "default-passwords.csv"
+
 
 Example search for cisco
 ```bash
